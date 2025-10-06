@@ -139,6 +139,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            margin-right: 0;
         }
         /* إضافة: تنسيق زر تبديل الوضع */
         .theme-toggle {
@@ -563,26 +564,34 @@
         
         /* Mobile Styles */
         @media (max-width: 768px) {
-            /* تعديل: تحسين قائمة التنقل على الهواتف لتكون Overlay */
+            /* تعديل: تحويل القائمة إلى نافذة منبثقة (Dropdown) */
+            .header .container { position: relative; } /* ضروري لتحديد موضع القائمة */
             .nav-links {
-                display: none;
-                position: fixed;
-                inset: 0;
-                background: rgba(7, 16, 38, 0.95);
+                display: none !important; /* استخدام !important للتأكد من الإخفاء */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--card);
+                box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+                border-radius: 0 0 12px 12px;
+                padding: 10px 0;
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 20px;
+                align-items: stretch;
                 z-index: 1000;
             }
-            .nav-links.active { display: flex; }
-            .nav-links a { 
-                margin: 10px 0; 
-                font-size: 22px;
-                color: #f1f5f9;
+            .nav-links.active {
+                display: flex !important; /* استخدام !important للتأكد من الإظهار */
             }
+            .nav-links a { 
+                margin: 0; 
+                padding: 12px 20px; /* تحسين الهوامش الداخلية */
+                font-size: 16px;
+                color: var(--text-primary); /* استخدام لون النص الأساسي */
+                border-bottom: 1px solid var(--border-color); /* فاصل بين الروابط */
+            }
+            .nav-links a:last-child { border-bottom: none; }
             .menu-toggle { display: block; }
-            .header .container { flex-wrap: wrap; }
 
             /* تعديل: تحسين أحجام الخطوط والهوامش */
             .hero h1 { font-size: 38px; }
@@ -607,15 +616,36 @@
             .how-it-works-grid { grid-template-columns: 1fr auto 1fr; }
             .synergy-arrow { transform: rotate(0deg); }
         }
+
+        /* --- إضافة: تحسين كود قائمة التنقل --- */
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0;
+        }
+        .logo { margin-left: 0; }
+        .nav-links {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-right: 0;
+        }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <div class="container">
+        <div class="container header-flex">
             <a href="#" class="logo">
                 <div class="icon"><i class="fas fa-paint-roller"></i></div>
-                <!-- إضافة: هيكل جديد لاسم التطبيق والوصف -->
                 <div class="logo-text">
                     <span class="app-name">My Decor Manager</span>
                     <span class="app-tagline">مدير الديكور الخاص بك</span>
@@ -624,15 +654,12 @@
             <nav class="nav-links">
                 <a href="#features">الميزات</a>
                 <a href="#how-it-works">كيف يعمل؟</a>
-                <!-- إضافة: رابط قسم الاشتراك -->
                 <a href="#pricing">الاشتراك</a>
                 <a href="#download">التحميل</a>
-                <!-- إضافة: رابط التجربة المجانية في قائمة التنقل (للهواتف) -->
+                <a href="#about-us">من نحن</a>
                 <a href="#free-trial" class="nav-link-mobile-only">تجربة مجانية</a>
             </nav>
-            <!-- إضافة: حاوية لتجميع الأزرار -->
             <div class="header-actions">
-                <!-- إضافة: زر التجربة المجانية في القائمة العلوية -->
                 <a href="#free-trial" class="btn btn-secondary btn-sm header-trial-button">تجربة مجانية</a>
                 <button class="btn theme-toggle" id="theme-toggle" title="تبديل الوضع">
                     <i class="fas fa-moon"></i>
@@ -645,6 +672,8 @@
     <style>
         .nav-link-mobile-only { display: none; } /* إخفاء رابط التجربة من القائمة على الشاشات الكبيرة */
         @media (max-width: 768px) {
+            /* إظهار رابط "من نحن" في القائمة المنسدلة فقط على الهواتف */
+            .nav-links a[href="#about-us"] { display: block; }
             .header-trial-button { display: none; } /* إخفاء زر التجربة من الشريط العلوي على الهواتف */
             .nav-link-mobile-only { display: block; } /* إظهار رابط التجربة داخل القائمة المنسدلة على الهواتف */
         }
@@ -1049,17 +1078,41 @@
     </footer>
 
     <script>
-        // تعديل: تحسين كود قائمة التنقل
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            const menuIcon = this.querySelector('i');
+        // --- تعديل: تحسين كود قائمة التنقل ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        // وظيفة لفتح/إغلاق القائمة
+        function toggleMenu() {
+            const menuIcon = menuToggle.querySelector('i');
             navLinks.classList.toggle('active');
+            
+            // تغيير أيقونة الزر
             if (navLinks.classList.contains('active')) {
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
             } else {
                 menuIcon.classList.remove('fa-times');
                 menuIcon.classList.add('fa-bars');
+            }
+        }
+        
+        // عند الضغط على زر القائمة
+        menuToggle.addEventListener('click', toggleMenu);
+
+        // إضافة: إغلاق القائمة عند الضغط على أي رابط بداخلها
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                toggleMenu(); // استدعاء نفس الوظيفة لإغلاق القائمة وتغيير الأيقونة
+            }
+        });
+
+        // عند تغيير حجم الشاشة، إذا أصبحت الشاشة أكبر من 768px، أغلق القائمة الجانبية
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.querySelector('i').classList.add('fa-bars');
             }
         });
 
