@@ -364,6 +364,7 @@
             border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
+            position: relative; /* إضافة: لجعل الشارة تتموضع بشكل صحيح */
         }
         .pricing-card.highlight {
             border-color: var(--primary);
@@ -372,6 +373,7 @@
         }
         .pricing-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 16px; }
         .pricing-card .price { font-size: 40px; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+        .pricing-card .price del { color: var(--muted); font-size: 28px; margin-right: 8px; } /* إضافة: تنسيق السعر القديم */
         .pricing-card .price span { font-size: 16px; font-weight: 500; color: var(--muted); }
         .pricing-card .description { color: var(--muted); margin-bottom: 24px; min-height: 60px; }
         .pricing-card ul { list-style: none; padding: 0; margin: 0 0 30px; text-align: right; }
@@ -384,6 +386,18 @@
         .pricing-card .btn {
             margin-top: auto;
             width: 100%;
+        }
+        /* إضافة: تنسيق شارة العرض الخاص */
+        .pricing-card .badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
         }
 
         /* --- إضافة: تنسيق قسم التواصل للاشتراك --- */
@@ -705,38 +719,56 @@
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="projectsModal" style="cursor: pointer;">
                     <div class="icon" style="background: linear-gradient(135deg,#06b6d4,#0284c7);"><i class="fas fa-hard-hat"></i></div>
-                    <h3>إدارة المشاريع</h3>
-                    <p>نظم مشاريعك، تتبع ميزانياتها، وراقب النفقات والدفعات المستلمة في مكان واحد.</p>
+                    <div class="feature-card-content">
+                        <h3>إدارة المشاريع</h3>
+                        <p>نظم مشاريعك، تتبع ميزانياتها، وراقب النفقات والدفعات المستلمة في مكان واحد.</p>
+                    </div>
+                    <a href="#" class="read-more" data-modal-target="projectsModal">عرض المزيد <i class="fas fa-arrow-left"></i></a>
                 </div>
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="workersModal" style="cursor: pointer; transition-delay: 0.1s;">
                     <div class="icon" style="background: linear-gradient(135deg,#f97316,#f59e0b);"><i class="fas fa-users"></i></div>
-                    <h3>سجل العمال الذكي</h3>
-                    <p>أضف عمالك، سجل أيام عملهم، واحتسب رواتبهم بكل دقة وسهولة.</p>
+                    <div class="feature-card-content">
+                        <h3>سجل العمال الذكي</h3>
+                        <p>أضف عمالك، سجل أيام عملهم، واحتسب رواتبهم بكل دقة وسهولة.</p>
+                    </div>
+                    <a href="#" class="read-more" data-modal-target="workersModal">عرض المزيد <i class="fas fa-arrow-left"></i></a>
                 </div>
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="expensesModal" style="cursor: pointer; transition-delay: 0.2s;">
                     <div class="icon" style="background: linear-gradient(135deg,#ef4444,#dc2626);"><i class="fas fa-wallet"></i></div>
-                    <h3>تتبع النفقات</h3>
-                    <p>سجل كل مصروفاتك وربطها بمشاريع محددة لتحديد الربح والخسارة بدقة.</p>
+                    <div class="feature-card-content">
+                        <h3>تتبع النفقات</h3>
+                        <p>سجل كل مصروفاتك وربطها بمشاريع محددة لتحديد الربح والخسارة بدقة.</p>
+                    </div>
+                    <a href="#" class="read-more" data-modal-target="expensesModal">عرض المزيد <i class="fas fa-arrow-left"></i></a>
                 </div>
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="inventoryModal" style="cursor: pointer; transition-delay: 0.3s;">
                     <div class="icon" style="background: linear-gradient(135deg,#22c55e,#16a34a);"><i class="fas fa-toolbox"></i></div>
-                    <h3>مخزون الأدوات</h3>
-                    <p>أدر مخزونك من الأدوات والمعدات، وتتبع حالتها ومن يستخدمها حالياً.</p>
+                    <div class="feature-card-content">
+                        <h3>مخزون الأدوات</h3>
+                        <p>أدر مخزونك من الأدوات والمعدات، وتتبع حالتها ومن يستخدمها حالياً.</p>
+                    </div>
+                    <a href="#" class="read-more" data-modal-target="inventoryModal">عرض المزيد <i class="fas fa-arrow-left"></i></a>
                 </div>
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="aiModal" style="cursor: pointer; transition-delay: 0.4s;">
                     <div class="icon" style="background: linear-gradient(135deg,#a855f7,#9333ea);"><i class="fas fa-robot"></i></div>
-                    <h3>مساعد الذكاء الاصطناعي</h3>
-                    <p>احصل على تحليل لبياناتك وتوصيات ذكية لمشاريعك بفضل مساعدك الافتراضي.</p>
+                    <div class="feature-card-content">
+                        <h3>مساعد الذكاء الاصطناعي</h3>
+                        <p>احصل على تحليل لبياناتك وتوصيات ذكية لمشاريعك بفضل مساعدك الافتراضي.</p>
+                    </div>
+                    <a href="#" class="read-more" data-modal-target="aiModal">عرض المزيد <i class="fas fa-arrow-left"></i></a>
                 </div>
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="syncModal" style="cursor: pointer; transition-delay: 0.5s;">
                     <div class="icon" style="background: linear-gradient(135deg,#8b5cf6,#6366f1);"><i class="fas fa-sync-alt"></i></div>
-                    <h3>مزامنة البيانات</h3>
-                    <p>تواصل مع فريقك وشارك بيانات العمل بسلاسة وأمان.</p>
+                    <div class="feature-card-content">
+                        <h3>مزامنة البيانات</h3>
+                        <p>تواصل مع فريقك وشارك بيانات العمل بسلاسة وأمان.</p>
+                    </div>
+                    <a href="#" class="read-more" data-modal-target="syncModal">عرض المزيد <i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>
@@ -792,8 +824,8 @@
             </p>
             <div class="pricing-grid">
                 <!-- بطاقة الاشتراك الشهري -->
-                <div class="pricing-card highlight scroll-animate" style="transition-delay: 0.1s;">
-                    <h3>الخطة الشهرية</h3>
+                <div class="pricing-card scroll-animate" style="transition-delay: 0.1s;">
+                    <h3>الخطة الشهرية (الأكثر مرونة)</h3>
                     <div class="price">500 دج<span>/ شهرياً</span></div>
                     <p class="description">الخطة الأكثر مرونة، مثالية للبدء والاستمتاع بجميع الميزات دون التزام طويل الأمد.</p>
                     <!-- تعديل: توحيد قائمة الميزات -->
@@ -808,7 +840,7 @@
                 <!-- بطاقة الاشتراك السنوي -->
                 <div class="pricing-card scroll-animate">
                     <h3>الخطة نصف السنوية</h3>
-                    <div class="price">2400 دج<span>/ 6 أشهر</span></div>
+                    <div class="price">2200 دج<span>/ 6 أشهر</span></div>
                     <p class="description">وفر أكثر مع التزام نصف سنوي واحصل على وصول كامل لجميع الميزات الاحترافية.</p>
                     <!-- تعديل: توحيد قائمة الميزات -->
                     <ul>
@@ -820,9 +852,10 @@
                     </ul>
                 </div>
                 <!-- بطاقة الاشتراك السنوي -->
-                <div class="pricing-card scroll-animate" style="transition-delay: 0.2s;">
+                <div class="pricing-card highlight scroll-animate" style="transition-delay: 0.2s;">
+                    <div class="badge">عرض خاص</div>
                     <h3>الخطة السنوية (الأكثر توفيراً)</h3>
-                    <div class="price">4500 دج<span>/ سنوياً</span></div>
+                    <div class="price"><del>4000</del> 3000 دج<span>/ سنوياً</span></div>
                     <p class="description">أفضل قيمة على الإطلاق! احصل على خصم كبير مع خطتنا السنوية وتمتع براحة البال.</p>
                     <ul>
                         <li><i class="fas fa-check"></i> مزامنة سحابية بين الأجهزة</li>
@@ -1194,11 +1227,11 @@
             max-height: 90vh;
             display: flex;
             flex-direction: column;
-            transform: scale(0.95);
-            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: scale(0.8); /* تعديل: تبدأ بحجم أصغر */
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease;
         }
         .modal-container.active .modal-content {
-            transform: scale(1);
+            transform: scale(1); /* تعديل: تعود للحجم الطبيعي */
         }
         .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid var(--border-color); }
         .modal-header h3 { margin: 0; font-size: 18px; }
@@ -1207,25 +1240,51 @@
         .modal-body ul { padding-right: 20px; margin: 0; }
         .modal-body ul li { margin-bottom: 12px; }
         .modal-footer { padding: 12px 16px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; gap: 10px; }
+        
+        /* --- إضافة: تنسيق رابط "عرض المزيد" --- */
+        .feature-card-content { flex-grow: 1; }
+        .read-more {
+            margin-top: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .read-more:hover { color: var(--accent); transform: translateX(-4px); }
+        .read-more i { font-size: 12px; transition: transform 0.2s ease; }
     </style>
     <script>
 
         // --- إضافة: كود النافذة المنبثقة (Modal) ---
         const modalTriggers = document.querySelectorAll('[data-modal-target]');
         
-        function openModal(modalId) {
+        function openModal(modalId, triggerElement) {
             const modal = document.getElementById(modalId);
-            if (modal) modal.classList.add('active');
+            if (modal) {
+                const modalContent = modal.querySelector('.modal-content');
+                if (triggerElement) {
+                    const rect = triggerElement.getBoundingClientRect();
+                    const originX = rect.left + rect.width / 2;
+                    const originY = rect.top + rect.height / 2;
+                    modalContent.style.transformOrigin = `${originX}px ${originY}px`;
+                }
+                modal.classList.add('active');
+            }
         }
 
         function closeModal(modal) {
             if (modal) modal.classList.remove('active');
         }
 
-        modalTriggers.forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                openModal(trigger.dataset.modalTarget);
-            });
+        document.body.addEventListener('click', (event) => {
+            const trigger = event.target.closest('[data-modal-target]');
+            if (trigger) {
+                event.preventDefault(); // منع السلوك الافتراضي للرابط
+                openModal(trigger.dataset.modalTarget, trigger);
+            }
         });
 
         document.querySelectorAll('.modal-container').forEach(modal => {
