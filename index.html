@@ -719,7 +719,7 @@
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="projectsModal" style="cursor: pointer;">
                     <div class="icon" style="background: linear-gradient(135deg,#06b6d4,#0284c7);"><i class="fas fa-hard-hat"></i></div>
-                    <div class="feature-card-content">
+                    <div class="feature-card-content" style="flex-grow: 1;">
                         <h3>إدارة المشاريع</h3>
                         <p>نظم مشاريعك، تتبع ميزانياتها، وراقب النفقات والدفعات المستلمة في مكان واحد.</p>
                     </div>
@@ -728,7 +728,7 @@
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="workersModal" style="cursor: pointer; transition-delay: 0.1s;">
                     <div class="icon" style="background: linear-gradient(135deg,#f97316,#f59e0b);"><i class="fas fa-users"></i></div>
-                    <div class="feature-card-content">
+                    <div class="feature-card-content" style="flex-grow: 1;">
                         <h3>سجل العمال الذكي</h3>
                         <p>أضف عمالك، سجل أيام عملهم، واحتسب رواتبهم بكل دقة وسهولة.</p>
                     </div>
@@ -737,7 +737,7 @@
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="expensesModal" style="cursor: pointer; transition-delay: 0.2s;">
                     <div class="icon" style="background: linear-gradient(135deg,#ef4444,#dc2626);"><i class="fas fa-wallet"></i></div>
-                    <div class="feature-card-content">
+                    <div class="feature-card-content" style="flex-grow: 1;">
                         <h3>تتبع النفقات</h3>
                         <p>سجل كل مصروفاتك وربطها بمشاريع محددة لتحديد الربح والخسارة بدقة.</p>
                     </div>
@@ -746,7 +746,7 @@
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="inventoryModal" style="cursor: pointer; transition-delay: 0.3s;">
                     <div class="icon" style="background: linear-gradient(135deg,#22c55e,#16a34a);"><i class="fas fa-toolbox"></i></div>
-                    <div class="feature-card-content">
+                    <div class="feature-card-content" style="flex-grow: 1;">
                         <h3>مخزون الأدوات</h3>
                         <p>أدر مخزونك من الأدوات والمعدات، وتتبع حالتها ومن يستخدمها حالياً.</p>
                     </div>
@@ -755,20 +755,20 @@
                 <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
                 <div class="feature-card scroll-animate" data-modal-target="aiModal" style="cursor: pointer; transition-delay: 0.4s;">
                     <div class="icon" style="background: linear-gradient(135deg,#a855f7,#9333ea);"><i class="fas fa-robot"></i></div>
-                    <div class="feature-card-content">
+                    <div class="feature-card-content" style="flex-grow: 1;">
                         <h3>مساعد الذكاء الاصطناعي</h3>
                         <p>احصل على تحليل لبياناتك وتوصيات ذكية لمشاريعك بفضل مساعدك الافتراضي.</p>
                     </div>
                     <a href="#" class="read-more" data-modal-target="aiModal">عرض المزيد <i class="fas fa-arrow-left"></i></a>
                 </div>
-                <!-- تعديل: إضافة data-modal-target لفتح النافذة المنبثقة -->
-                <div class="feature-card scroll-animate" data-modal-target="syncModal" style="cursor: pointer; transition-delay: 0.5s;">
-                    <div class="icon" style="background: linear-gradient(135deg,#8b5cf6,#6366f1);"><i class="fas fa-sync-alt"></i></div>
-                    <div class="feature-card-content">
-                        <h3>مزامنة البيانات</h3>
-                        <p>تواصل مع فريقك وشارك بيانات العمل بسلاسة وأمان.</p>
+                <!-- إضافة: بطاقة جديدة لميزة بلاغات العمال -->
+                <div class="feature-card scroll-animate" data-modal-target="reportsModal" style="cursor: pointer; transition-delay: 0.5s;">
+                    <div class="icon" style="background: linear-gradient(135deg,#3b82f6,#2563eb);"><i class="fas fa-flag"></i></div>
+                    <div class="feature-card-content" style="flex-grow: 1;">
+                        <h3>بلاغات العمال</h3>
+                        <p>استقبل بلاغات الغياب، طلبات الإجازة، والشكاوى من عمالك مباشرة وراجعها.</p>
                     </div>
-                    <a href="#" class="read-more" data-modal-target="syncModal">عرض المزيد <i class="fas fa-arrow-left"></i></a>
+                    <a href="#" class="read-more" data-modal-target="reportsModal">عرض المزيد <i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>
@@ -784,9 +784,9 @@
                     <div class="card-icon manager-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3>للمدير: My Decor Manager</h3>
+                    <h3>تطبيق المدير: My Decor Manager</h3>
                     <p>
-                        لوحة تحكم مركزية تمنحك رؤية شاملة لكل شيء. أدر مشاريعك، تابع النفقات، ووافق على طلبات الشراء المرسلة من العمال، كل ذلك من مكان واحد.
+                        لوحة تحكم مركزية تمنحك رؤية شاملة. أدر مشاريعك، تابع النفقات، ووافق على طلبات الشراء، وراجع بلاغات العمال، كل ذلك من مكان واحد.
                     </p>
                 </div>
                 <!-- سهم الربط -->
@@ -798,9 +798,9 @@
                     <div class="card-icon worker-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>للعامل: My Worker</h3>
+                    <h3>تطبيق العامل: My Worker</h3>
                     <p>
-                        تطبيق بسيط يمكّن العامل من رؤية حضوره اليومي، عرض رصيده المالي، والأهم من ذلك، إرسال طلبات شراء المواد مباشرةً إلى المدير للموافقة عليها.
+                        تطبيق بسيط يمكّن العامل من رؤية رصيده المالي، إرسال طلبات الشراء، وتقديم بلاغات الغياب أو الإجازة مباشرة إلى المدير.
                     </p>
                 </div>
             </div>
@@ -809,7 +809,7 @@
                 <div class="icon"><i class="fas fa-key"></i></div>
                 <h4>الميزة الأساسية: الربط بنفس الحساب</h4>
                 <p>
-                    عندما يقوم المدير بإنشاء حساب في <strong>My Decor Manager</strong>، يمكنه استخدام نفس البريد الإلكتروني وكلمة المرور لتسجيل دخول عماله إلى تطبيق <strong>My Worker</strong>. هذا الربط يضمن أن جميع البيانات، من سجلات الحضور إلى طلبات الشراء، تتم مزامنتها تلقائياً وبأمان بين التطبيقين.
+                    عندما يقوم المدير بإنشاء حساب في <strong>My Decor Manager</strong>، يمكنه استخدام نفس البريد الإلكتروني وكلمة المرور لتسجيل الدخول في تطبيق <strong>My Worker</strong>. هذا الربط يضمن أن جميع البيانات، من سجلات الحضور إلى طلبات الشراء والبلاغات، تتم مزامنتها تلقائياً وبأمان بين التطبيقين.
                 </p>
             </div>
         </div>
@@ -820,35 +820,35 @@
         <div class="container">
             <h2 class="section-title">خطط الاشتراك</h2>
             <p class="section-subtitle">
-                اختر الخطة التي تناسبك للوصول إلى جميع الميزات الاحترافية. قبل الالتزام، يمكنك تجربة التطبيق والحصول على وصول كامل مجاناً لمدة 24 ساعة.
+                اختر الخطة التي تناسبك للوصول إلى جميع الميزات الاحترافية. قبل الالتزام، يمكنك تجربة التطبيق والحصول على وصول كامل مجاناً لمدة 24 ساعة عبر طلب رمز تفعيل تجريبي.
             </p>
             <div class="pricing-grid">
                 <!-- بطاقة الاشتراك الشهري -->
                 <div class="pricing-card scroll-animate" style="transition-delay: 0.1s;">
                     <h3>الخطة الشهرية (الأكثر مرونة)</h3>
-                    <div class="price">500 دج<span>/ شهرياً</span></div>
+                    <div class="price">300 دج<span>/ شهرياً</span></div>
                     <p class="description">الخطة الأكثر مرونة، مثالية للبدء والاستمتاع بجميع الميزات دون التزام طويل الأمد.</p>
                     <!-- تعديل: توحيد قائمة الميزات -->
                     <ul>
-                        <li><i class="fas fa-check"></i> مزامنة سحابية بين الأجهزة</li>
-                        <li><i class="fas fa-check"></i> ربط حسابات العمال</li>
+                        <li><i class="fas fa-check"></i> إدارة المشاريع والنفقات</li>
+                        <li><i class="fas fa-check"></i> سجل العمال والرواتب</li>
+                        <li><i class="fas fa-check"></i> مزامنة سحابية وربط العمال</li>
                         <li><i class="fas fa-check"></i> مساعد الذكاء الاصطناعي</li>
-                        <li><i class="fas fa-check"></i> دعم فني متواصل</li>
-                        <li><i class="fas fa-check"></i> جميع الميزات الاحترافية</li>
+                        <li><i class="fas fa-check"></i> جميع الميزات الحالية والمستقبلية</li>
                     </ul>
                 </div>
                 <!-- بطاقة الاشتراك السنوي -->
                 <div class="pricing-card scroll-animate">
                     <h3>الخطة نصف السنوية</h3>
-                    <div class="price">2200 دج<span>/ 6 أشهر</span></div>
+                    <div class="price">1500 دج<span>/ 6 أشهر</span></div>
                     <p class="description">وفر أكثر مع التزام نصف سنوي واحصل على وصول كامل لجميع الميزات الاحترافية.</p>
                     <!-- تعديل: توحيد قائمة الميزات -->
                     <ul>
-                        <li><i class="fas fa-check"></i> مزامنة سحابية بين الأجهزة</li>
-                        <li><i class="fas fa-check"></i> ربط حسابات العمال</li>
+                        <li><i class="fas fa-check"></i> إدارة المشاريع والنفقات</li>
+                        <li><i class="fas fa-check"></i> سجل العمال والرواتب</li>
+                        <li><i class="fas fa-check"></i> مزامنة سحابية وربط العمال</li>
                         <li><i class="fas fa-check"></i> مساعد الذكاء الاصطناعي</li>
-                        <li><i class="fas fa-check"></i> دعم فني متواصل</li>
-                        <li><i class="fas fa-check"></i> جميع الميزات الاحترافية</li>
+                        <li><i class="fas fa-check"></i> جميع الميزات الحالية والمستقبلية</li>
                     </ul>
                 </div>
                 <!-- بطاقة الاشتراك السنوي -->
@@ -858,11 +858,11 @@
                     <div class="price"><del>4000</del> 3000 دج<span>/ سنوياً</span></div>
                     <p class="description">أفضل قيمة على الإطلاق! احصل على خصم كبير مع خطتنا السنوية وتمتع براحة البال.</p>
                     <ul>
-                        <li><i class="fas fa-check"></i> مزامنة سحابية بين الأجهزة</li>
-                        <li><i class="fas fa-check"></i> ربط حسابات العمال</li>
+                        <li><i class="fas fa-check"></i> إدارة المشاريع والنفقات</li>
+                        <li><i class="fas fa-check"></i> سجل العمال والرواتب</li>
+                        <li><i class="fas fa-check"></i> مزامنة سحابية وربط العمال</li>
                         <li><i class="fas fa-check"></i> مساعد الذكاء الاصطناعي</li>
-                        <li><i class="fas fa-check"></i> دعم فني متواصل</li>
-                        <li><i class="fas fa-check"></i> جميع الميزات الاحترافية</li>
+                        <li><i class="fas fa-check"></i> جميع الميزات الحالية والمستقبلية</li>
                     </ul>
                 </div>
             </div>
@@ -1070,21 +1070,44 @@
         </div>
     </div>
 
-    <!-- إضافة: نافذة منبثقة جديدة لميزة مزامنة البيانات -->
-    <div id="syncModal" class="modal-container">
+    <!-- إضافة: نافذة منبثقة جديدة لميزة بلاغات العمال -->
+    <div id="reportsModal" class="modal-container">
         <div class="modal-backdrop" data-action="close-modal"></div>
         <div class="modal-content">
             <div class="modal-header">
-                <h3>مزامنة البيانات</h3>
+                <h3>بلاغات العمال</h3>
                 <button class="close-btn" data-action="close-modal">&times;</button>
             </div>
             <div class="modal-body">
-                <p>ابقَ على تواصل دائم مع فريق عملك وحافظ على شفافية البيانات بينكم بفضل ميزة المزامنة السحابية.</p>
+                <p>تمكين التواصل الفعال بينك وبين فريق عملك هو مفتاح النجاح. ميزة البلاغات تتيح لعمالك إرسال طلبات وملاحظات هامة مباشرة من هواتفهم إلى لوحة تحكمك.</p>
                 <ul>
-                    <li><strong>تحديثات في الوقت الحقيقي:</strong> عند مزامنة بياناتك، يتم تحديث سجلات العمل تلقائياً بين تطبيقك (My Decor Manager) وتطبيقات العمال (My Worker).</li>
-                    <li><strong>تمكين العمال:</strong> تسمح المزامنة للعاملين بالاطلاع على سجل حضورهم وأرصدتهم المالية المحدثة مباشرة من هواتفهم.</li>
-                    <li><strong>تقليل المشاكل:</strong> الشفافية الكاملة في البيانات تقلل من سوء الفهم والمشاكل المالية المتعلقة بالأجور والسلف.</li>
-                    <li><strong>طلبات شراء فورية:</strong> تتيح لك المزامنة استقبال طلبات شراء المواد من العمال مباشرة عبر التطبيق، مما يسرع من وتيرة العمل.</li>
+                    <li><strong>أنواع متعددة من البلاغات:</strong> يمكن للعامل إرسال بلاغ غياب، طلب إجازة محددة المدة، أو تقديم شكوى أو ملاحظة عامة.</li>
+                    <li><strong>مراجعة مركزية:</strong> تصل جميع البلاغات إلى واجهة خاصة في تطبيق المدير، حيث يمكنك مراجعتها، قبولها، أو رفضها.</li>
+                    <li><strong>تحديث تلقائي للسجلات:</strong> عند الموافقة على بلاغ غياب أو إجازة، يقوم النظام تلقائياً بتحديث سجل حضور العامل، مما يوفر عليك عناء الإدخال اليدوي.</li>
+                    <li><strong>توثيق وحفظ:</strong> يتم حفظ جميع البلاغات وملاحظات المدير عليها، مما يوفر سجلاً موثقاً للتواصل بينك وبين فريقك.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-action="close-modal">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- إضافة: نافذة منبثقة جديدة لميزة طلبات الشراء -->
+    <div id="purchasesModal" class="modal-container">
+        <div class="modal-backdrop" data-action="close-modal"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>طلبات الشراء</h3>
+                <button class="close-btn" data-action="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>قم بتمكين عمالك من تسجيل المشتريات التي يقومون بها نيابة عنك، وراجعها ووافق عليها بسهولة من تطبيقك.</p>
+                <ul>
+                    <li><strong>تسجيل سهل:</strong> يمكن للعامل تسجيل تفاصيل أي عملية شراء (مثل مواد أو أدوات) مع المبلغ والملاحظات.</li>
+                    <li><strong>إرسال للمراجعة:</strong> يتم إرسال طلب الشراء مباشرة إلى تطبيق المدير للمراجعة والموافقة.</li>
+                    <li><strong>إضافة تلقائية للنفقات:</strong> عند موافقتك على طلب الشراء، يتم تحويله تلقائياً إلى سجل النفقات في حساباتك، مما يضمن عدم نسيان أي مصروف.</li>
+                    <li><strong>شفافية مالية:</strong> تضمن هذه الميزة توثيق جميع عمليات الشراء التي تتم عبر العمال، مما يزيد من الشفافية ويمنع الأخطاء المالية.</li>
                 </ul>
             </div>
             <div class="modal-footer">
